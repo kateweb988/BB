@@ -75,26 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           name: {
             required: true
-          },
-          email: {
-            required: true,
-            email: true
           }
         },
         messages: {
           tel: {
-            required: 'Заполните поле',
-            regex: 'Телефон может содержать символы + - ()'
+            required: 'Данное поле обязательно',
+            regex: 'Введите действительный номер телефона'
           },
           name: {
-            required: 'Заполните поле',
+            required: 'Данное поле обязательно',
           },
-          text: {
-            required: 'Заполните поле',
+          check: {
+            required: 'Подпишите согласие на обработку персональных данных',
           },
           email: {
             required: 'Заполните поле',
-            email: 'Неверный формат E-mail'
+            email: 'Введите действительный адрес электронной почты'
           }
         },
         submitHandler: function (form) {
@@ -137,37 +133,14 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
     })
   });
-});
-document.addEventListener('DOMContentLoaded', function () {
-  $(document).ready(function () {
-    $("#up").on('click', function () {
-      $("#incdec input").val(parseInt($("#incdec input").val()) + 1);
-    });
 
-    $("#down").on('click', function () {
-      $("#incdec input").val(parseInt($("#incdec input").val()) - 1);
-    });
-
-  });
-});
-document.addEventListener('DOMContentLoaded', function () {
-  $(document).ready(function () {
-    $("#up2").on('click', function () {
-      $("#incdec2 input").val(parseInt($("#incdec2 input").val()) + 1);
-    });
-
-    $("#down2").on('click', function () {
-      $("#incdec2 input").val(parseInt($("#incdec2 input").val()) - 1);
-    });
-
-  });
 });
 document.addEventListener('DOMContentLoaded', function () {
   $('.articmodal-close').click(function (e) {
     $.arcticmodal('close');
 
   });
-  $('.nav__btn').click(function (e) {
+  $('.nav__btn, .a1, a.btn').click(function (e) {
     e.preventDefault();
     $('#popup-call').arcticmodal({
     });
@@ -749,22 +722,45 @@ document.addEventListener('DOMContentLoaded', function () {
       nextEl: '.swiper-button-next1',
       prevEl: '.swiper-button-prev1',
     },
-  });
-  const swiper2 = new Swiper('.swiper2', {
-    slidesPerView: 3,
-    spaceBetween: 43,
-    pagination: {
-      el: ".swiper-pagination3",
-    },
     breakpoints: {
       // when window width is >= 320px
       320: {
-        spaceBetween: 0,
-        loop: true,
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 1
+      },
+      576: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 4
+      },
+      767: {
+        spaceBetween: 19,
+        centeredSlides: true,
+        slidesPerView: 4
+      },
+      992: {
+        spaceBetween: 20,
+        slidesPerView: 6,
+        centeredSlides: true
+      },
+      1200: {
+        spaceBetween: 20,
+        slidesPerView: 9
+      }
+    }
+  });
+  const swiper2 = new Swiper('.swiper2', {
+    slidesPerView: 4,
+    spaceBetween: 60,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        spaceBetween: 20,
         slidesPerView: 1
       },
       767: {
-        spaceBetween: 10,
+        spaceBetween: 20,
         slidesPerView: 2
       },
       992: {
@@ -772,70 +768,35 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 3
       },
       1200: {
-        spaceBetween: 43,
+        spaceBetween: 60,
+        slidesPerView: 3
+      },
+      1400: {
+        spaceBetween: 60,
         slidesPerView: 3
       }
     }
   });
   const swiper3 = new Swiper('.swiper3', {
-    slidesPerView: 4,
-    spaceBetween: 69,
-    pagination: {
-      el: ".swiper-pagination4",
-    },
-    navigation: {
-      nextEl: '.swiper-button-next4',
-      prevEl: '.swiper-button-prev4',
-    },
+    slidesPerView: 3,
+    spaceBetween: 20,
     breakpoints: {
       // when window width is >= 320px
       320: {
-        spaceBetween: 0,
-        loop: true,
+        spaceBetween: 20,
         slidesPerView: 1
       },
       767: {
-        spaceBetween: 10,
-        slidesPerView: 3
+        spaceBetween: 20,
+        slidesPerView: 2
       },
       992: {
         spaceBetween: 20,
-        slidesPerView: 4
+        slidesPerView: 2
       },
       1200: {
-        spaceBetween: 69,
-        slidesPerView: 4
-      }
-    }
-  });
-  const swiper33 = new Swiper('.swiper33', {
-    slidesPerView: 4,
-    spaceBetween: 28,
-    pagination: {
-      el: ".swiper-pagination4",
-    },
-    navigation: {
-      nextEl: '.swiper-button-next4',
-      prevEl: '.swiper-button-prev4',
-    },
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        spaceBetween: 0,
-        loop: true,
-        slidesPerView: 1
-      },
-      767: {
-        spaceBetween: 10,
-        slidesPerView: 3
-      },
-      992: {
         spaceBetween: 20,
-        slidesPerView: 4
-      },
-      1200: {
-        spaceBetween: 28,
-        slidesPerView: 4
+        slidesPerView: 3
       }
     }
   });
@@ -847,6 +808,20 @@ document.addEventListener("DOMContentLoaded", () => {
     menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  var basicScrollTop = function () {
+    var btnTop = document.querySelector('.up');
+    var btnReveal = function () {
+      if (window.scrollY >= 2000) {
+        btnTop.classList.add('is-visible');
+      } else {
+        btnTop.classList.remove('is-visible');
+      }
+    };
+    window.addEventListener('scroll', btnReveal);
+  };
+  basicScrollTop();
 });
 // svg
 $(function () {

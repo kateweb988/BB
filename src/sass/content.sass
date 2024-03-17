@@ -2,15 +2,12 @@
    z-index: 10
    cursor: pointer
    position: absolute
-   top: 16px
-   right: 16px
+   top: 3%
+   right: 4%
    cursor: pointer
    fill: white
    z-index: 20
    transition: 0.5s
-   width: 32px
-   height: 32px
-   background: $or
    display: flex
    align-items: center
    justify-content: center
@@ -22,17 +19,17 @@
    position: relative
 .popup-call__box 
    position: absolute
-   top: 40%
-   margin-top: -300px
+   top: 50% 
+   margin-top: -400px
    left: 50%
-   width: 410px
    height: auto
-   margin-left: -210px
+   margin-left: -260px
    overflow: hidden
-   background: rgb(0, 41, 16)
-   padding: 60px 45px 40px
-#tel-error
-   display: none !important
+   padding: 60px 38px
+   width: 520px
+   height: auto
+   border-radius: 30px
+   background: rgb(255, 255, 255)
 .close-popup
    position: absolute
    top: 0
@@ -92,8 +89,8 @@ input:-moz-placeholder
    background-color: #ffffff
    max-width: 20px
    margin-right: 11px
-.custom-checkbox:checked+label::before 
-   background: url(/img/check2.png) no-repeat center center
+.custom-checkbox:checked+label::before, .custom-checkbox:checked+label+label::before 
+   background: url(/img/check.svg) no-repeat center center
    background-size: 8px
 .swiper-pagination
    display: flex
@@ -101,6 +98,44 @@ input:-moz-placeholder
    bottom: 19px
    position: absolute
    z-index: 2
+.custom-checkbox 
+   position: absolute
+   z-index: -1
+   opacity: 0
+.custom-checkbox+label, .custom-checkbox+label+label
+   display: flex
+   align-items: flex-start
+   user-select: none
+   cursor: pointer
+   font-size: 24px
+   line-height: 33px
+   color: #FFFFFF
+.custom-checkbox+label::before, .custom-checkbox+label+label::before
+   content: ''
+   display: inline-block
+   flex-shrink: 0
+   display: flex
+   flex-grow: 0
+   background-repeat: no-repeat
+   background-position: center center
+   margin-right: 20px
+   flex: 1 0 auto
+   width: 30px
+   height: 30px
+   border: 1px solid white
+   transition: 0.2s
+   max-width: 30px
+   max-height: 30px
+   border-radius: 50%
+.custom-checkbox+label#check-error::before
+   display: none
+label#check-error
+   position: absolute
+   bottom: 48px
+   left: 13px
+   color: #e53b35
+   font-size: 12px
+   font-weight: 400
 .swiper-pagination-bullet
    width: 52px
    height: 2px
@@ -116,6 +151,21 @@ input:-moz-placeholder
 .tabs__btn_active
    color: #20252d !important
    position: relative
+input.error 
+   border: 1px solid rgb(229, 59, 53) !important
+label.error 
+   position: relative
+   color: #e53b35
+   font-size: 12px
+   font-weight: 400
+   line-height: 15px
+   margin-bottom: 16px
+   display: block
+   padding: 0 !important
+   margin-top: -9px
+   margin-left: 13px
+input.error + label + .placeholder
+   color: #e53b35 !important
 .swiper-button-next, .swiper-button-prev
    z-index: 9
 .swiper-button-disabled
@@ -407,7 +457,7 @@ ul.info li
    position: fixed
    background: rgba(255, 255, 255, 0.8)
    width: 100%
-   z-index: 5
+   z-index: 10
    &__box 
       justify-content: space-between
       align-items: center
@@ -467,9 +517,57 @@ ul.info li
    &__box 
       position: relative
    &__fig 
-      position: absolute
-      right: -23px
-      top: 186px
+      position: relative
+      right: -19px
+      top: -10px
+      width: 302px
+      z-index: 0
+      height: 302px
+      padding-top: 107px
+      text-align: center
+      z-index: 5
+      padding-left: 15px
+      margin: -149px 0 -149px auto
+      img 
+         width: 100%
+         height: 100%
+         position: absolute
+         left: 0
+         top: 0
+      .text1 
+         color: rgb(21, 20, 20)
+         font-family: 'Neutral Face'
+         font-size: 13.61px
+         font-weight: 400
+         line-height: 104%
+         transform: rotate(14.99deg)
+         text-align: center
+         position: relative
+         z-index: 1
+         margin-bottom: 10px
+      .text2
+         font-family: 'Neutral Face'
+         color: rgb(21, 20, 20)
+         font-size: 36px
+         font-weight: 400
+         line-height: 100%
+         transform: rotate(14.99deg)
+         text-align: center
+         position: relative
+         z-index: 1
+         left: -8px
+         margin-bottom: 8px
+      .text3 
+         font-family: 'Neutral Face'
+         color: rgb(21, 20, 20)
+         font-size: 13.61px
+         font-weight: 400
+         line-height: 104%
+         transform: rotate(14.99deg)
+         text-align: center
+         position: relative
+         z-index: 1
+         left: -17px
    &__sub 
       position: absolute
       bottom: 116px
@@ -514,6 +612,9 @@ ul.info li
          height: 100%
          max-width: 100%
          border-radius: 30px
+         & + div + div + div + div + div + div 
+            opacity: 0
+            transition: 0s !important
       .swiper-wrapper
          display: flex
          align-items: flex-end
@@ -540,8 +641,8 @@ ul.info li
    position: relative
    &__fig 
       position: absolute
-      right: -146px
-      top: -203px
+      right: -211px
+      top: -298px
       z-index: -1
    &__bg 
       position: absolute
@@ -587,9 +688,9 @@ ul.info li
       &::first-letter
          margin-left: 190px
    .main__fig2
-      left: -279px
+      left: -342px
       position: absolute
-      top: 300px
+      top: 143px
    &__box 
       margin-top: 64px
       left: 7px
@@ -664,5 +765,745 @@ ul.info li
          background: rgb(254, 139, 57)
    .main__fig
       top: inherit
-      right: -130px
-      bottom: -159px
+      right: -201px
+      bottom: -319px
+.item 
+   padding: 133px 0
+   overflow: visible
+   position: relative
+   h2 
+      width: 100%
+      max-width: 1120px 
+      margin-left: auto
+      margin-right: 18px
+      &::first-letter
+         margin-left: 190px
+   &__wrap 
+      position: relative
+      margin-top: 62px
+   &__block 
+      width: max-content
+   .main__fig
+      bottom: -202px
+      left: -229px
+      top: inherit
+      z-index: 1
+   .main__fig2
+      position: absolute
+      bottom: 236px
+      left: 281px
+      z-index: 2
+   .main__fig3
+      position: absolute
+      bottom: 95px
+      left: 602px
+      z-index: 2
+   &__top
+      justify-content: space-between
+      align-items: center
+      padding: 0 42px 0 43px
+   &__center 
+      position: relative
+      left: -9px
+      img 
+         &:nth-child(2)
+            position: relative
+            left: -110px
+   &__left 
+      flex-wrap: wrap 
+      width: 100%
+      max-width: 550px
+      position: relative
+      flex: 1 0 auto 
+      top: -1px
+      .item__el 
+         &:nth-child(1)
+            margin-left: 64px
+         &:nth-child(8)
+            margin-right: 64px
+         &:nth-child(9)
+            margin-left: 83px
+         &:nth-child(12)
+            margin-left: 34px
+   &__right
+      flex-wrap: wrap 
+      width: 100%
+      max-width: 630px
+      position: relative
+      flex: 1 0 auto 
+      top: -4px
+      right: 120px
+      .item__el 
+         background: $or
+         color: rgb(21, 20, 20)
+         border: 1px solid  $or
+         &:nth-child(2)
+            margin-left: 102px
+         &:nth-child(4)
+            margin-left: 56px
+         &:nth-child(5)
+            margin-left: 16px
+   &__el 
+      align-items: center
+      justify-content: center
+      width: max-content
+      height: 35px
+      border: 1px solid rgb(187, 187, 187)
+      border-radius: 24px
+      background: rgb(255, 255, 255)
+      color: rgb(21, 20, 20)
+      font-size: 16px
+      font-weight: 400
+      line-height: 130%
+      margin-bottom: 15px
+      padding: 0 9px
+      margin-right: 8px
+   &__btn 
+      width: 319px
+      height: 55px
+      margin-top: 40px
+      margin-left: 618px
+   &__content 
+      margin: 40px 90px 0 auto
+      width: 100%
+      max-width: 622px
+      p 
+         margin-bottom: 27px
+         color: rgb(21, 20, 20)
+         font-size: 20px
+         font-weight: 400
+         letter-spacing: -0.02em
+         line-height: 24px
+      .btn 
+         width: 331px
+         height: 55px
+   &__images 
+      justify-content: space-between
+      align-items: center
+      margin-top: -151px
+      img
+         border-radius: 24px
+         position: relative
+         &:nth-child(1)
+            width: 29.62%
+         &:nth-child(2)
+            align-self: flex-end
+            top: -32px
+            width: 23.14%
+         &:nth-child(3)
+            align-self: flex-end
+            top: 3px
+            width: 26.15%
+         &:nth-child(4)
+            top: 42px
+            width: 13.76%
+.tara 
+   padding: 117px 0
+   overflow: visible
+   position: relative
+   h2 
+      width: 100%
+      max-width: 1120px 
+      margin-left: auto
+      margin-right: 28px
+      &::first-letter
+         margin-left: 190px
+   &__row 
+      align-items: flex-end
+      justify-content: space-between
+      position: relative
+      margin-top: 127px
+      img 
+         &:nth-child(1)
+            width: 27.8%
+         &:nth-child(2)
+            position: absolute
+            bottom: -43px
+            left: 364px
+            z-index: 2
+         &:nth-child(3)
+            position: relative
+            bottom: 208px
+            width: 17.18%
+         &:nth-child(4)
+            position: absolute
+            bottom: -23px
+            right: 599px
+            z-index: 2
+         &:nth-child(5)
+            width: 40.934%
+   .main__fig2
+      position: absolute
+      bottom: -231px
+      right: 70px
+   .main__fig
+      top: -235px
+      right: -244px
+   &__info 
+      width: 100%
+      margin: 20px 0 0 610px
+      max-width: 833px 
+      p 
+         color: rgb(21, 20, 20)
+         font-size: 20px
+         font-weight: 400
+         letter-spacing: -0.02em
+         margin-bottom: 36px
+         line-height: 165%
+      a 
+         width: 275px
+         height: 54px
+.ser 
+   padding: 171px 0
+   overflow: visible
+   position: relative
+   h2 
+      width: 100%
+      max-width: 1120px 
+      margin-left: auto
+      margin-right: 28px
+      &::first-letter
+         margin-left: 170px
+   .swiper2 
+      margin-left: auto
+      margin-top: 77px
+      width: 100%
+      height: 332px
+      max-width: 1170px
+      position: relative
+      left: 28px
+      .swiper-slide
+         a 
+            display: block
+            width: 100%
+            height: 100%
+            img 
+               width: 100%
+               height: 100%
+               object-fit: contain
+   .main__fig2
+      position: absolute
+      left: -18.5%
+      top: -27%
+   .main__fig3
+      position: absolute
+      left: -4%
+      top: 163px
+.make 
+   padding: 94px 0
+   overflow: visible
+   position: relative
+   h2 
+      width: 100%
+      max-width: 1120px 
+      margin-left: auto
+      margin-right: 28px
+      &::first-letter
+         margin-left: 170px
+   &__ber 
+      align-items: center
+      justify-content: space-between
+      width: 305px
+      height: 56px
+      padding: 11px 20px
+      border-radius: 16px
+      background: rgb(190, 18, 163)
+      position: absolute
+      top: 244px
+      left: 16px
+   &__left 
+      align-items: flex-start
+      p 
+         margin-left: 11px
+         color: rgb(255, 255, 255)
+         font-size: 14px
+         line-height: 17px
+   &__row 
+      margin-top: 49px
+      align-items: flex-start
+      justify-content: space-between
+   &__item 
+      text-align: center
+      img 
+         width: 100%
+      p 
+         margin-top: 16px
+         color: rgb(0, 0, 0)
+         font-size: 18px
+         font-weight: 400
+         line-height: 130%
+         font-family: 'Neutral Face'
+      &:nth-child(1)
+         margin-top: 266px
+         width: 14.27%
+      &:nth-child(2)
+         align-self: flex-end
+         margin-top: 256px
+         width: 14.5%
+      &:nth-child(3)
+         width: 35.647%
+      &:nth-child(4)
+         margin-top: 266px
+         width: 14.25%
+      &:nth-child(5)
+         width: 14.25%
+   &__btn 
+      width: 282px
+      height: 54px
+      border: 2px solid rgb(255, 186, 123)
+      border-radius: 24px
+      background: rgb(255, 255, 255)
+      background: white
+      color: rgb(21, 20, 20)
+      font-size: 16px
+      font-weight: 400
+      line-height: 20px
+      padding-top: 1px
+      text-transform: uppercase
+      margin: -61px 0 0 auto
+      position: relative
+      left: 7px
+      .svg 
+         margin-left: 10px
+      &:hover 
+         background: $or
+         color: white 
+         .svg 
+            path 
+               fill: white
+   .swiper3 
+      margin-top: 60px
+      width: 100%
+      max-width: 92.5%
+      .swiper-slide
+         box-sizing: border-box
+         border: 2px solid rgb(255, 133, 95)
+         border-radius: 24px
+         background: rgb(255, 255, 255)
+         height: auto
+         padding: 20px
+   &__info 
+      align-items: center
+      justify-content: space-between
+   &__photo 
+      width: 60px
+      height: 60px
+      object-fit: contain 
+   &__ava 
+      margin-right: 20px
+      position: relative
+   &__flag 
+      position: absolute
+      bottom: 9px
+      right: 2px
+   &__top 
+      align-items: flex-start
+      justify-content: space-between
+   &__text 
+      color: rgb(36, 36, 36)
+      font-size: 16px
+      font-weight: 400
+      line-height: 130%
+      margin-top: 7px
+   &__name 
+      margin-bottom: 10px
+      color: rgb(36, 36, 36)
+      font-size: 16px
+      font-weight: 600
+      line-height: 20px
+   &__time 
+      color: rgb(134, 134, 149)
+      font-size: 16px
+      font-weight: 600
+      line-height: 20px
+   &__area 
+      position: relative
+      top: -3px
+   &__stars 
+      align-items: center
+      img 
+         margin-right: 6px
+         &:last-child
+            margin-right: 0
+.work 
+   padding: 46px 0 77px
+   position: relative
+   margin-top: 155px
+   &__box 
+      display: none
+   .tabs__content 
+      img
+         position: absolute
+         top: 0
+         left: 0
+         width: 100%
+         height: 100%
+         object-fit: cover
+   .sub 
+      position: relative
+      top: 0
+      z-index: 2
+      left: 13px
+      margin-bottom: 35px
+   .tabs__btn
+      width: 608px
+      padding: 30px 20px
+      border-radius: 24px
+      backdrop-filter: blur(8.7px)
+      background: rgba(255, 255, 255, 0.5)
+      position: relative
+      display: block
+      margin-bottom: 30px
+      cursor: pointer
+      z-index: 2
+      &:last-child
+         margin-bottom: 0
+   &__name 
+      margin-bottom: 11px
+      color: rgb(21, 20, 20)
+      font-size: 24px
+      font-weight: 400
+      font-family: 'Neutral Face'
+      line-height: 141%
+   &__text 
+      color: rgb(21, 20, 20)
+      font-size: 16px
+      font-weight: 400
+      line-height: 130%
+   .tabs__btn_active
+      background: $or
+.ic1 
+   input 
+      padding-left: 0
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut  
+   transform: translateY(8px) 
+.placeholder  
+   left: 14px 
+   pointer-events: none 
+   position: absolute 
+   transform-origin: 0 50% 
+   transition: transform 200ms, color 200ms 
+   top: 16px 
+   color: rgb(111, 122, 139)
+   font-size: 17px
+   font-weight: 400
+   line-height: 23px
+   letter-spacing: 0.15%
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder  
+   transform: translateY(-30px) translateX(10px)
+   left: 10px
+   top: 29px
+   font-size: 12px
+.input:focus ~ .placeholder  
+   font-size: 12px
+   left: 10px
+   top: 29px
+.input-container  
+   position: relative 
+   transition: 0.5s 
+.input  
+   border: 0 
+   height: 100% 
+   outline: 0 
+   width: 100% 
+   background: transparent
+.call 
+   padding: 150px 0
+   margin-top: 92px
+   .container 
+      position: relative
+   .main__fig2
+      position: absolute
+      left: 19px
+      top: 11px
+   .main__fig3
+      position: absolute
+      left: -17.5%
+      top: -215px
+   &__fig 
+      position: absolute
+      right: 31px
+      top: 39px
+   h2 
+      width: 100%
+      max-width: 1120px 
+      margin-left: auto
+      margin-right: 28px
+      &::first-letter
+         margin-left: 195px
+   &__form
+      width: 100%
+      max-width: 947px
+      position: relative
+      margin: 48px 199px 0 auto
+   .ic1 
+      width: 100%
+      input 
+         width: 100%
+         height: 55px
+         border: 1px solid rgb(251, 116, 60)
+         border-radius: 24px
+         padding-left: 16px
+         color: rgb(21, 20, 20) !important
+         margin-bottom: 15px
+         padding-left: 20px
+         padding-top: 2px
+   textarea 
+      width: 100%
+      max-width: 100% 
+      border: 1px solid rgb(251, 116, 60)
+      border-radius: 24px
+      color: rgb(21, 20, 20) !important
+      min-height: 139px 
+      padding-left: 20px
+      padding-top: 20px
+      margin-bottom: 8px
+   &__flex 
+      justify-content: space-between
+      .ic1
+         width: 49%
+   .custom-checkbox + label, .custom-checkbox+label+label
+      color: rgb(21, 20, 20)
+      font-size: 16px
+      font-weight: 400
+      align-items: flex-start
+      line-height: 20px
+   .custom-checkbox + label::before, .custom-checkbox + label+label::before
+      box-sizing: border-box
+      margin-right: 8px
+      width: 18px
+      height: 18px
+      border: 1px solid #151414
+      border-radius: 2px
+      max-width: 18px
+      margin-top: 3px
+   button 
+      margin-top: 30px
+      transition: 0.5s 
+      width: 469px
+      height: 54px
+.footer 
+   padding: 136px 0 100px 
+   &__row 
+      align-items: center
+      margin-bottom: 63px
+      a 
+         color: rgb(21, 20, 20)
+         font-size: 50px
+         font-weight: 400
+         font-family: 'Neutral Face'
+         line-height: 130%
+         position: relative
+         top: 4px
+         &:hover 
+            color: $or
+      .footer__link
+         &_3
+            margin-left: auto
+         &_1
+            margin-left: 217px
+         &_2 
+            margin-left: 114px
+   &__flex 
+      align-items: flex-start
+      justify-content: space-between
+      img 
+         position: relative
+         left: -33px
+         top: -21px
+         z-index: 2
+   &__uls 
+      align-items: flex-start
+      position: relative
+      left: -21px
+      top: 3px
+      ul 
+         &:first-child
+            margin-right: 107px
+         li 
+            margin-bottom: 12px
+            &:last-child
+               margin-bottom: 0
+            a 
+               color: rgb(21, 20, 20)
+               font-size: 14px
+               font-weight: 400
+               text-transform: uppercase
+               &:hover 
+                  color: $or
+   &__content 
+      text-align: right
+      a 
+         color: rgb(21, 20, 20)
+         font-size: 50px
+         display: block
+         margin-bottom: 16px
+         font-family: 'Neutral Face'
+         font-weight: 400
+         line-height: 130%
+         &:last-child
+            margin-bottom: 0
+            letter-spacing: 0.01em
+         &:hover 
+            color: $or
+   #map 
+      border-radius: 24px
+      overflow: hidden
+      width: 100%
+      height: 559px
+      margin: -148px 0 13px
+      position: relative
+      z-index: 1
+   &__info 
+      color: rgb(21, 20, 20)
+      font-size: 50px
+      font-family: 'Neutral Face'
+      font-weight: 400
+      line-height: 130%
+   &__bottom 
+      margin-top: 71px
+      padding-top: 13px
+      border-top: 1px solid rgb(187, 187, 187)
+      align-items: flex-start
+      justify-content: space-between
+      p 
+         color: rgba(34, 32, 31, 0.7)
+         font-size: 16px
+         font-weight: 400
+         line-height: 130%
+      a 
+         color: rgba(34, 32, 31, 0.7)
+         font-size: 16px
+         font-weight: 400
+         line-height: 130%
+         &:hover 
+            color: $or
+   .main__fig2
+      top: 306px
+      left: -62px
+      position: absolute
+   .container 
+      position: relative
+.up 
+   position: fixed
+   right: 5%
+   bottom: 5%
+   opacity: 0
+   transition: 0.5s
+   z-index: 2
+   &:hover 
+      .svg 
+         path
+            fill: $or
+   &.is-visible 
+      opacity: 1
+.error 
+   padding: 3.5% 0 
+   .container
+      position: relative
+   &__fig
+      position: absolute
+      top: -248px
+      left: 226px
+   &__fig2
+      position: absolute
+      top: 20%
+      left: -104px
+   &__fig3
+      position: absolute
+      bottom: -290px
+      right: -150px
+      top: initial
+   &__box 
+      max-width: 1051px
+      width: 100%
+      margin-left: auto
+      margin-top: 91px
+      margin-right: 115px
+   h2 
+      width: 100%
+      max-width: 1120px
+      margin-left: -223px
+      margin-right: 0
+      margin-top: -10px
+      &::first-letter
+         margin-left: 470px
+   &__btn 
+      margin: 51px 0 0 268px
+      width: 300px
+      height: 55px
+   &__pic 
+      position: absolute
+      top: -91px
+      left: 7px
+.popup 
+   &__form
+      width: 100%
+      max-width: 947px
+      position: relative
+      margin: 48px 199px 0 auto
+   .ic1 
+      width: 100%
+      input 
+         width: 100%
+         height: 55px
+         border: 1px solid rgb(251, 116, 60)
+         border-radius: 24px
+         padding-left: 16px
+         color: rgb(21, 20, 20) !important
+         margin-bottom: 15px
+         padding-left: 20px
+         padding-top: 2px
+   textarea 
+      width: 100%
+      max-width: 100% 
+      border: 1px solid rgb(251, 116, 60)
+      border-radius: 24px
+      color: rgb(21, 20, 20) !important
+      min-height: 139px 
+      padding-left: 20px
+      padding-top: 20px
+      margin-bottom: 8px
+   &__flex 
+      justify-content: space-between
+      .ic1
+         width: 49%
+   .custom-checkbox + label, .custom-checkbox+label+label
+      color: rgb(21, 20, 20)
+      font-size: 16px
+      font-weight: 400
+      align-items: flex-start
+      line-height: 20px
+   .custom-checkbox + label::before, .custom-checkbox + label+label::before
+      box-sizing: border-box
+      margin-right: 8px
+      width: 18px
+      height: 18px
+      border: 1px solid #151414
+      border-radius: 2px
+      max-width: 18px
+      margin-top: 3px
+   button 
+      margin-top: 30px
+      transition: 0.5s 
+      width: 100%
+      height: 54px
+   &__title 
+      margin-bottom: 20px
+      color: rgb(21, 20, 20)
+      font-family: 'Neutral Face'
+      font-size: 24px
+      font-weight: 400
+      line-height: 141%
+      text-align: center
+   &__text 
+      color: rgb(21, 20, 20)
+      font-size: 20px
+      font-weight: 400
+      line-height: 24px
+      text-align: center
+      margin-bottom: 40px
+.note 
+   display: none
