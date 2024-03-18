@@ -915,6 +915,8 @@
       right: 181px
       top: 84px
       left: inherit
+   .popup-call__box
+      margin-top: -600px
 @media ( max-width: 991px )
    input, textarea, select
       -webkit-appearance: none
@@ -1281,7 +1283,11 @@
       right: 92px
       top: 90px
       left: inherit
+   .popup-call__box
+      margin-top: -500px
 @media screen and (max-width: 767px)
+   .popup-call__box
+      margin-top: -400px
    h1 
       font-size: 55px
       &::first-letter
@@ -1401,6 +1407,19 @@
       max-width: 447px 
       &::first-letter
          margin-left: 190px
+   .cookie
+      flex-direction: column
+      width: 336px
+      height: 133px
+      margin-left: -168px
+      p 
+         font-size: 12px
+         line-height: 15px
+   .cookie__close
+      width: 115px
+      height: 40px
+      margin-left: auto
+      margin-top: 10px
 @media screen and (max-width: 576px)
    button:active, button:focus 
       outline: none
@@ -1538,7 +1557,7 @@
          margin-left: 47px !important
    .main__btn
       display: none
-   .accordeon
+   .accordeon_1
       margin-top: 32px
    .accordeon__button, .accordeon__button2, .accordeon__button3, .accordeon__button4, .accordeon__button5, .accordeon__button6, .accordeon__button7, .accordeon__button8
       font-size: 14px
@@ -1843,20 +1862,20 @@
    .footer__info
       width: 100%
       max-width: 300px
-   .accordeon__panel, .accordeon__panel2, .accordeon__panel3, .accordeon__panel4, .accordeon__panel5, .accordeon__panel6, .accordeon__panel7, .accordeon__panel8
-      max-height: inherit !important
+   // .accordeon__panel, .accordeon__panel2, .accordeon__panel3, .accordeon__panel4, .accordeon__panel5, .accordeon__panel6, .accordeon__panel7, .accordeon__panel8
+   //    max-height: inherit !important
    .main__right, .main__left, .main__content
       max-width: 100%
       width: 100%
-   .panel__text, .panel__text2, .panel__text3, .panel__text4, .panel__text5, .panel__text6, .panel__text7, .panel__text8
-      border: none
-   .accordeon__button, .accordeon__button2, .accordeon__button3, .accordeon__button4, .accordeon__button5, .accordeon__button6, .accordeon__button7, .accordeon__button8
-      background: #ffba7b !important
-      pointer-events: none
-      border: none
-      &:after 
-         background: url(/img/up-arrow.svg) no-repeat !important
-         background-size: 100% !important
+   // .panel__text, .panel__text2, .panel__text3, .panel__text4, .panel__text5, .panel__text6, .panel__text7, .panel__text8
+   //    border: none
+   // .accordeon__button, .accordeon__button2, .accordeon__button3, .accordeon__button4, .accordeon__button5, .accordeon__button6, .accordeon__button7, .accordeon__button8
+   //    background: #ffba7b !important
+   //    pointer-events: none
+   //    border: none
+   //    &:after 
+   //       background: url(/img/up-arrow.svg) no-repeat !important
+   //       background-size: 100% !important
    .error__pic 
       left: 28px
       width: 281px

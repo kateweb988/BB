@@ -1,3 +1,8 @@
+$(function () {
+  $('#div1').hover(function () {
+    $('#div2').addClass('hover');
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   class ItcTabs {
@@ -140,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.arcticmodal('close');
 
   });
-  $('.nav__btn, .a1, a.btn').click(function (e) {
+  $('.nav__btn, .a1, a.btn, .stage__btn, .item__content a').click(function (e) {
     e.preventDefault();
     $('#popup-call').arcticmodal({
     });

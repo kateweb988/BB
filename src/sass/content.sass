@@ -364,7 +364,7 @@ ul.info li
    display: inline-block
    border-radius: 5px
    padding: 0 5px
-.accordeon8
+.accordeon_8
    border-bottom: 1px solid rgb(187, 187, 187)
 .accordeon, .accordeon2, .accordeon3, .accordeon4, .accordeon5,  .accordeon6, .accordeon7,  .accordeon8
    width: 100%
@@ -398,6 +398,12 @@ ul.info li
       opacity: 1
    &:after 
       background: url(/img/p-arrow.svg) no-repeat !important
+.accordeon_1
+   .main__bg 
+      opacity: 1
+   .accordeon__button.active
+      .main__bg 
+         opacity: 0
 .accordeon__button:after, .accordeon__button2:after, .accordeon__button3:after, .accordeon__button4:after, .accordeon__button5:after, .accordeon__button6:after, .accordeon__button7:after, .accordeon__button8:after 
    content: ""
    position: absolute
@@ -445,6 +451,8 @@ ul.info li
       font-weight: 400
       line-height: 24px
       margin-bottom: 9px
+.main__bg.hover
+   opacity: 0
 .panel__info
    font-weight: 300
    font-size: 16px
@@ -880,7 +888,7 @@ ul.info li
    &__images 
       justify-content: space-between
       align-items: center
-      margin-top: -151px
+      margin-top: -76px
       img
          border-radius: 24px
          position: relative
@@ -1250,6 +1258,7 @@ ul.info li
          margin-bottom: 15px
          padding-left: 20px
          padding-top: 2px
+         padding-bottom: 0 !important
    textarea 
       width: 100%
       max-width: 100% 
@@ -1456,6 +1465,7 @@ ul.info li
          margin-bottom: 15px
          padding-left: 20px
          padding-top: 2px
+         padding-bottom: 0 !important
    textarea 
       width: 100%
       max-width: 100% 
@@ -1507,3 +1517,44 @@ ul.info li
       margin-bottom: 40px
 .note 
    display: none
+.cookie 
+   position: fixed
+   left: 50%
+   display: flex
+   align-items: center
+   justify-content: space-between
+   bottom: 5%
+   width: 654px
+   height: 110px
+   padding: 19px 20px
+   border: 1px solid rgb(251, 116, 60)
+   border-radius: 30px
+   background: rgb(255, 255, 255)
+   z-index: 5
+   margin-left: -327px
+   &__close 
+      width: 138px
+      height: 55px
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 24px
+      background:  $or
+      color: rgb(0, 0, 0)
+      font-size: 16px
+      font-weight: 400
+      line-height: 20px
+      text-transform: uppercase
+      border: 1px solid  $or
+      flex: 1 0 auto 
+      max-width: 138px
+      transition: 0.5s
+      &:hover 
+         background: transparent
+         color: $or
+   p 
+      color: rgb(112, 112, 112)
+      font-size: 20px
+      font-weight: 400
+      line-height: 24px
+
