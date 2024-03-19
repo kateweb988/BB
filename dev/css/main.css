@@ -810,7 +810,7 @@ ul.info li {
   justify-content: space-between;
   border-top: 1px solid #bbbbbb;
   text-align: center;
-  color: #151414;
+  color: #151414 !important;
   font-family: 'Neutral Face';
   font-size: 32px;
   font-weight: 400;
@@ -1303,7 +1303,9 @@ ul.info li {
   .item__content {
     margin: 40px 90px 0 auto;
     width: 100%;
-    max-width: 622px; }
+    max-width: 622px;
+    position: relative;
+    z-index: 5; }
     .item__content p {
       margin-bottom: 27px;
       color: #151414;

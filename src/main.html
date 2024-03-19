@@ -19,6 +19,8 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="">
 	<meta property="og:description" content="">
+	<link rel="icon" href="img/favicon.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vjik/arcticModal@master/arcticmodal/jquery.arcticmodal.css">
@@ -271,7 +273,7 @@
 				<a href="#" class="main__btn btn">
 					Заказать/получить прайс
 				</a>
-				<div class="accordeon accordeon_1">
+				<div class="accordeon accordeon_1" id="b1">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
 							<div class="accordeon__button closed">
@@ -331,10 +333,10 @@
 				<div class="accordeon" id="div1">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#b1" class="accordeon__button closed">
 								косметика для тела
 								<img src="img/a22.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a2.png" alt="">
@@ -391,13 +393,13 @@
 						</li>
 					</div>
 				</div>
-				<div class="accordeon">
+				<div class="accordeon" id="b2">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#div1" class="accordeon__button closed">
 								Spa-средства и средства для купания, для детей
 								<img src="img/a33.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a3.png" alt="">
@@ -431,13 +433,13 @@
 						</li>
 					</div>
 				</div>
-				<div class="accordeon">
+				<div class="accordeon" id="b3">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#b2" class="accordeon__button closed">
 								Косметика для волос
 								<img src="img/a44.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a4.png" alt="">
@@ -473,13 +475,13 @@
 						</li>
 					</div>
 				</div>
-				<div class="accordeon">
+				<div class="accordeon" id="b4">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#b3" class="accordeon__button closed">
 								Косметика для мужчин
 								<img src="img/a55.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a5.png" alt="">
@@ -515,13 +517,13 @@
 						</li>
 					</div>
 				</div>
-				<div class="accordeon">
+				<div class="accordeon" id="b5">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#b4" class="accordeon__button closed">
 								Косметика для животных
 								<img src="img/a66.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a9.png" alt="">
@@ -554,13 +556,13 @@
 						</li>
 					</div>
 				</div>
-				<div class="accordeon">
+				<div class="accordeon" id="b6">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#b5" class="accordeon__button closed">
 								Бытовая химия
 								<img src="img/a88.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a7.png" alt="">
@@ -599,13 +601,13 @@
 						</li>
 					</div>
 				</div>
-				<div class="accordeon accordeon_8">
+				<div class="accordeon accordeon_8" id="b7">
 					<div class="accordeon-container">
 						<li class="accordeon__item">
-							<div class="accordeon__button closed">
+							<a href="#b6" class="accordeon__button closed">
 								Парфюмированные средства
 								<img src="img/a77.png" alt="" class="main__bg">
-							</div>
+							</a>
 							<ul class="accordeon__panel">
 								<li class="panel__text q">
 									<img src="img/a8.png" alt="">
@@ -1437,13 +1439,13 @@
 
 				// Наша метка, указываем коордианты
 				myGeoObjects = new ymaps.Placemark([59.891182, 30.404577], {
-					balloonContentBody: 'ЧистоGUN',
+					balloonContentBody: 'BBCare',
 				}, {
 					iconLayout: 'default#image',
 					// Путь до нашей картинки
 					iconImageHref: 'img/map.svg',
 					// Размер по ширине и высоте
-					iconImageSize: [50, 70],
+					iconImageSize: [40, 50],
 					// Смещение левого верхнего угла иконки относительно
 					// её «ножки» (точки привязки).
 					iconImageOffset: [-35, -35]
